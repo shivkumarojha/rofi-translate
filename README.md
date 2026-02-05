@@ -18,32 +18,40 @@ Provide detail of specific translation
 
 ## Requirement
 
-* [rofi](https://github.com/davatorium/rofi)
-* [translate shell](https://github.com/soimort/translate-shell)
-* mplayer (without it you can't play the audio file)
+- [rofi](https://github.com/davatorium/rofi)
+- [translate shell](https://github.com/soimort/translate-shell)
+- mplayer (without it you can't play the audio file)
 
 ### Archlinux
-``` bash
+
+```bash
 sudo pacman -S translate-shell rofi mplayer
 ```
 
 ## Install
+
 ### Download rofi-translate
-``` bash
+
+```bash
 git clone https://github.com/garyparrot/rofi-translate
 cd rofi-translate
 ```
 
 ### Configure environment variables
+
 Edit `.xprofile`, add the following line.
-``` bash
+
+```bash
 export PATH=~/rofi-translate:$PATH
 ```
+
+### Restart the system for changes to take effect
 
 ### Usage
 
 shell
-``` bash
+
+```bash
 $ rofi_trans
 $ rofi_trans brief
 $ rofi_trans verbose
@@ -51,13 +59,14 @@ $ rofi_trans delete
 ```
 
 Add key binding for i3-wm
-``` plaintext
+
+```plaintext
 bindsym $mod+t exec rofi_trans
 ```
 
 ### Configuration of rofi-translate
 
-Open the file ``rofi_trans`` with your text editor.
+Open the file `rofi_trans` with your text editor.
 Then make changes to these environment variables.
 
 ```bash
@@ -75,7 +84,10 @@ function Configs {
     export transAudioCacheDir="$HOME/.rofi_trans_audio"
 
     # target language for translation
-    export transTarget="zh-TW"
+    # export transTarget="zh-TW"
+
+    # for english to hindi translation
+    export transTarget="hi-en"
 
     # transArgs: Arguement for translate shell
     export transArgs="-b -speak"
